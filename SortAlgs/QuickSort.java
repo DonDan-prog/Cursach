@@ -8,9 +8,7 @@ public class QuickSort extends Sort {
     @Override
     public void run()
     {
-        this.jbars.shuffle();
-        this.jbars.repaint();
-        this.jbars.drawWait(1000);
+        this.beforeSort();
 
         int[] array = this.jbars.getArray();
         int left = 0;
@@ -18,8 +16,7 @@ public class QuickSort extends Sort {
 
         this.quickSort(array, left, right);
 
-        this.jbars.repaint();
-        this.sortThread = null;
+        this.afterSort();
     }
 
     private void quickSort(int[] array, int left, int right)

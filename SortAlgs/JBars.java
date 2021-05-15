@@ -82,7 +82,7 @@ public class JBars extends JPanel {
             float newColor = this.array[i] / (float) this.array.length;
             int rgb = Color.HSBtoRGB(newColor, 1f, 1f);
             g.setColor(new Color(rgb));
-            g.fillRect(i * this.width + this.barsOffsetX, this.array.length + this.barsOffsetY, this.width, -this.array[i]);
+            g.fillRect(i * this.width + this.barsOffsetX, this.array.length - this.array[i] + this.barsOffsetY, this.width, this.array[i]);
         }
     }
 }

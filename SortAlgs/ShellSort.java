@@ -7,9 +7,7 @@ public class ShellSort extends Sort {
 
     @Override
     public void run() {
-        this.jbars.shuffle();
-        this.jbars.repaint();
-        this.jbars.drawWait(1000);
+        this.beforeSort();
 
         int[] array = this.jbars.getArray();
         for (int gap = array.length / 2; gap > 0; gap /= 2) {
@@ -37,7 +35,7 @@ public class ShellSort extends Sort {
             this.jbars.repaint();
             this.jbars.drawWait(50);
         }
-        this.jbars.repaint();
-        this.sortThread = null;
+        
+        this.afterSort();
     }
 }

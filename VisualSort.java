@@ -25,7 +25,7 @@ public class VisualSort extends JFrame {
         Box newContentPane = Box.createVerticalBox();
 
         newContentPane.add(Box.createVerticalStrut(10));
-        newContentPane.add(new SortBarsPanel(100));
+        newContentPane.add(new SortBarsPanel(130));
         newContentPane.add(Box.createVerticalStrut(10));
         newContentPane.add(addExitButton());
         newContentPane.add(Box.createVerticalStrut(10));

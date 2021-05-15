@@ -31,7 +31,9 @@ public final class SortBarsPanel extends JPanel {
             new BubbleSort(this.sortBars),
             new InsertionSort(this.sortBars),
             new ShellSort(this.sortBars),
+            new MergeSort(this.sortBars),
             new ShakerSort(this.sortBars),
+            new SmoothSort(this.sortBars),
             new BinarySort(this.sortBars),
             new QuickSort(this.sortBars),
             new RadixSort(this.sortBars)

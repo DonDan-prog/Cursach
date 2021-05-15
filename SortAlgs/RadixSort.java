@@ -9,9 +9,7 @@ public class RadixSort extends Sort {
 
     @Override
     public void run() {
-        this.jbars.shuffle();
-        this.jbars.repaint();
-        this.jbars.drawWait(1000);
+        this.beforeSort();
 
         int[] array = this.jbars.getArray();
 
@@ -19,8 +17,7 @@ public class RadixSort extends Sort {
         for (int divisor = 1; maxNumber / divisor > 0; divisor *= 10)
             this.countSort(array, divisor);
 
-        this.jbars.repaint();
-        this.sortThread = null;
+        this.afterSort();
     }
 
     private void countSort(int[] array, int divisor) {

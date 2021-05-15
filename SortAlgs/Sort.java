@@ -8,6 +8,17 @@ public abstract class Sort implements Runnable, ActionListener {
     protected Thread sortThread;
     protected String name;
 
+    protected void beforeSort() {
+        this.jbars.shuffle();
+        this.jbars.repaint();
+        this.jbars.drawWait(1000);
+    }
+    
+    protected void afterSort() {
+        this.jbars.repaint();
+        this.sortThread = null;
+    }
+
     public Sort(JBars jbars, String name) {
         this.jbars = jbars;
         this.sortThread = null;

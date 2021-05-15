@@ -7,9 +7,7 @@ public class BubbleSort extends Sort {
 
     @Override
     public void run() {
-        this.jbars.shuffle();
-        this.jbars.repaint();
-        this.jbars.drawWait(1000);
+        this.beforeSort();
 
         int[] array = this.jbars.getArray();
         for (int i = 0; i < array.length; i++) {
@@ -28,7 +26,6 @@ public class BubbleSort extends Sort {
             }
         }
 
-        this.jbars.repaint();
-        this.sortThread = null;
+        this.afterSort();
     }
 }

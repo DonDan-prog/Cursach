@@ -7,9 +7,7 @@ public class ShakerSort extends Sort {
 
     @Override
     public void run() {
-        this.jbars.shuffle();
-        this.jbars.repaint();
-        this.jbars.drawWait(1000);
+        this.beforeSort();
 
         int[] array = this.jbars.getArray();
 
@@ -45,7 +43,7 @@ public class ShakerSort extends Sort {
             }
             left++;
         }
-        this.jbars.repaint();
-        this.sortThread = null;
+        
+        this.afterSort();
     }
 }
