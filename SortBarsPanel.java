@@ -2,7 +2,6 @@ import SortAlgs.*;
 
 import javax.swing.JPanel;
 import javax.swing.Box;
-import javax.swing.JButton;
 import javax.swing.BoxLayout;
 
 public final class SortBarsPanel extends JPanel {
@@ -15,14 +14,21 @@ public final class SortBarsPanel extends JPanel {
         Box sortButtons = Box.createHorizontalBox();
         sortButtons.add(Box.createHorizontalStrut(5));
 
-        for(Sort sort: this.sortAlgorithms)
+        for(Sort sortButton: this.sortAlgorithms)
         {
-            JButton newSortButton = new JButton(sort.getName());
-            newSortButton.addActionListener(sort);
-            sortButtons.add(newSortButton);
+            sortButtons.add(sortButton);
             sortButtons.add(Box.createHorizontalStrut(5));
         }
         return sortButtons;
+    }
+
+    @Override
+    public void setEnabled(boolean isEnabled)
+    {
+        super.setEnabled(isEnabled);
+        
+        for(Sort sortButton: this.sortAlgorithms)
+            sortButton.setEnabled(isEnabled);
     }
 
     public SortBarsPanel(int amount) {

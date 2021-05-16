@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+
 import javax.swing.JButton;
 import javax.swing.Box;
 
@@ -10,7 +11,7 @@ public class VisualSort extends JFrame {
         new VisualSort();
     }
 
-    private class CloseListener implements ActionListener {
+    private class CloseListener implements ActionListener { 
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
